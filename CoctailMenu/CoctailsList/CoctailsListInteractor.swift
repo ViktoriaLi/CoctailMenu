@@ -25,7 +25,7 @@ class CoctailsListViewInteractor: CoctailsListBusinessLogic {
                 let response = CoctailsListView.GetErrorView.Response(error: .failed)
                 self.presenter?.processingError(response: response)
             case .success(let coctails):
-                let response = CoctailsListView.GetCoctails.Response(coctails: coctails.drinks)
+                let response = CoctailsListView.GetCoctails.Response(category: request.category, coctails: coctails.drinks)
                 print(coctails) 
                 self.presenter?.processingCoctails(response: response)
             }

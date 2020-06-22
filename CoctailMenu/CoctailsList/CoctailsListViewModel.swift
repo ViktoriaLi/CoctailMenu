@@ -17,10 +17,12 @@ enum CoctailsListView {
         }
         
         struct Response {
+            let category: String
             let coctails: [Coctail]
         }
         
         struct ViewModel {
+            let category: String
             let coctails: [Coctail]
         }
     }

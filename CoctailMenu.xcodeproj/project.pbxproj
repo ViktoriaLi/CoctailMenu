@@ -30,6 +30,7 @@
 		C1B3051724A0EB93007783B0 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B3051624A0EB93007783B0 /* UIImageView.swift */; };
 		C1B3051924A0EC0D007783B0 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B3051824A0EC0D007783B0 /* ImageCacheManager.swift */; };
 		C1B3051B24A0EE7B007783B0 /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B3051A24A0EE7B007783B0 /* FilterModel.swift */; };
+		C1B3051D24A10CAF007783B0 /* CoctailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1B3051C24A10CAE007783B0 /* CoctailTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		C1B3051624A0EB93007783B0 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		C1B3051824A0EC0D007783B0 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		C1B3051A24A0EE7B007783B0 /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
+		C1B3051C24A10CAE007783B0 /* CoctailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoctailTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			children = (
 				C1B304E324A0B638007783B0 /* Main.storyboard */,
 				C1B304F924A0D678007783B0 /* CoctailTableViewCell.swift */,
+				C1B3051C24A10CAE007783B0 /* CoctailTableViewCell.xib */,
 				C1B304FB24A0D6EC007783B0 /* CategoryTableViewCell.swift */,
 				C1B304FD24A0D717007783B0 /* CategoryTableViewCell.xib */,
 			);
@@ -252,6 +255,7 @@
 				C1B304FE24A0D717007783B0 /* CategoryTableViewCell.xib in Resources */,
 				C1B3050C24A0E27A007783B0 /* SomethingWrong.xib in Resources */,
 				C1B304E724A0B641007783B0 /* Assets.xcassets in Resources */,
+				C1B3051D24A10CAF007783B0 /* CoctailTableViewCell.xib in Resources */,
 				C1B304F224A0BB27007783B0 /* Filters.storyboard in Resources */,
 				C1B304E524A0B638007783B0 /* Main.storyboard in Resources */,
 			);

@@ -10,15 +10,12 @@ import UIKit
 
 class CoctailTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet weak var coctailImageView: UIImageView!
+    @IBOutlet weak var coctailNameLabel: UILabel!
+    
+    func configure(coctail: Coctail) {
+        coctailNameLabel.text = coctail.name
+        coctailImageView.loadImage(from: coctail.imageUrl + "/preview")
     }
 
 }

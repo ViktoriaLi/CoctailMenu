@@ -30,7 +30,7 @@ class CoctailsListViewPresenter: CoctailsListViewPresentationLogic {
     }
     
     func processingCoctails(response: CoctailsListView.GetCoctails.Response) {
-        let viewModel = CoctailsListView.GetCoctails.ViewModel(coctails: response.coctails)
+        let viewModel = CoctailsListView.GetCoctails.ViewModel(category: response.category, coctails: response.coctails)
         viewController?.fillCoctailsList(viewModel: viewModel)
     }
     
