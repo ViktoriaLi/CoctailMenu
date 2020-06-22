@@ -32,7 +32,6 @@ class NetworkManager {
         print(endpoint)
         if let url = URL(string: endpoint) {
             var request = URLRequest(url : url)
-            
             request.httpMethod = "GET"
             return request
         }

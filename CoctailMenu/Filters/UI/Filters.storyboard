@@ -6,60 +6,117 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Filters View Controller-->
         <scene sceneID="1a6-im-ulf">
             <objects>
-                <viewController id="2uu-fO-56s" customClass="FiltersViewController" customModule="CoctailMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="filtersVC" id="2uu-fO-56s" customClass="FiltersViewController" customModule="CoctailMenu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z7A-p4-odY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVC-zN-EJl">
+                                <rect key="frame" x="0.0" y="44" width="414" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUR-YY-p4U">
+                                        <rect key="frame" x="20" y="23.5" width="29" height="24"/>
+                                        <state key="normal" image="arrow"/>
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="2uu-fO-56s" eventType="touchUpInside" id="9LV-Zw-adR"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TK7-0t-y3C">
+                                        <rect key="frame" x="89" y="21" width="67.5" height="28"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="TK7-0t-y3C" firstAttribute="leading" secondItem="CUR-YY-p4U" secondAttribute="trailing" constant="40" id="3Vk-uj-4pl"/>
+                                    <constraint firstAttribute="bottom" secondItem="CUR-YY-p4U" secondAttribute="bottom" constant="22.460000000000001" id="CHr-ib-7vJ"/>
+                                    <constraint firstItem="TK7-0t-y3C" firstAttribute="top" secondItem="bVC-zN-EJl" secondAttribute="top" constant="21" id="CRA-kT-o8X"/>
+                                    <constraint firstItem="CUR-YY-p4U" firstAttribute="leading" secondItem="bVC-zN-EJl" secondAttribute="leading" constant="20" id="DxO-Xk-8LW"/>
+                                    <constraint firstAttribute="bottom" secondItem="TK7-0t-y3C" secondAttribute="bottom" constant="21" id="MuZ-JZ-Agi"/>
+                                    <constraint firstAttribute="height" constant="70" id="a66-HR-A13"/>
+                                    <constraint firstItem="CUR-YY-p4U" firstAttribute="top" secondItem="bVC-zN-EJl" secondAttribute="top" constant="23.460000000000001" id="dHZ-KM-XBP"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g0f-FI-m7h">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="114" width="414" height="748"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="71" id="cZq-yU-qh5" customClass="FilterTableViewCell" customModule="CoctailMenu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="71"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="filterCell" rowHeight="134" id="cZq-yU-qh5" customClass="FilterTableViewCell" customModule="CoctailMenu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="134"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cZq-yU-qh5" id="2qh-Dl-fZP">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="71"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="134"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xye-22-7M5">
-                                                    <rect key="frame" x="36" y="25" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xye-22-7M5">
+                                                    <rect key="frame" x="35" y="41" width="39" height="50"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                                    <color key="textColor" red="0.49411764705882355" green="0.49411764705882355" blue="0.49411764705882355" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1El-kb-n0K">
-                                                    <rect key="frame" x="323" y="29" width="25" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1El-kb-n0K">
+                                                    <rect key="frame" x="354" y="41" width="25" height="50"/>
                                                     <state key="normal" image="check_mark"/>
+                                                    <connections>
+                                                        <action selector="filterCheckMarkButtonTapped:" destination="cZq-yU-qh5" eventType="touchUpInside" id="J8u-yo-2dF"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Xye-22-7M5" firstAttribute="leading" secondItem="2qh-Dl-fZP" secondAttribute="leading" constant="35" id="7PZ-iE-84a"/>
+                                                <constraint firstItem="1El-kb-n0K" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xye-22-7M5" secondAttribute="trailing" constant="20" id="CAV-Me-I0l"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="1El-kb-n0K" secondAttribute="bottom" constant="32" id="E21-VC-3Tg"/>
+                                                <constraint firstItem="Xye-22-7M5" firstAttribute="top" secondItem="2qh-Dl-fZP" secondAttribute="topMargin" constant="30" id="V4b-FW-Z6O"/>
+                                                <constraint firstAttribute="trailing" secondItem="1El-kb-n0K" secondAttribute="trailing" constant="35" id="lu4-xT-Em5"/>
+                                                <constraint firstItem="1El-kb-n0K" firstAttribute="top" secondItem="2qh-Dl-fZP" secondAttribute="topMargin" constant="30" id="ybl-0b-v9b"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Xye-22-7M5" secondAttribute="bottom" constant="32" id="yyv-VI-9Pu"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="filterCheckMarkButton" destination="1El-kb-n0K" id="MPZ-Jh-Mhi"/>
+                                            <outlet property="filterNameLabel" destination="Xye-22-7M5" id="QlA-lp-tiZ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="bVC-zN-EJl" firstAttribute="leading" secondItem="z7A-p4-odY" secondAttribute="leading" id="0tK-Q3-bHu"/>
+                            <constraint firstItem="Ya6-X1-YTu" firstAttribute="trailing" secondItem="bVC-zN-EJl" secondAttribute="trailing" id="4Fr-bu-int"/>
                             <constraint firstItem="Ya6-X1-YTu" firstAttribute="bottom" secondItem="g0f-FI-m7h" secondAttribute="bottom" id="AXy-cZ-gl6"/>
                             <constraint firstItem="g0f-FI-m7h" firstAttribute="leading" secondItem="Ya6-X1-YTu" secondAttribute="leading" id="OIg-0v-Pe7"/>
+                            <constraint firstItem="g0f-FI-m7h" firstAttribute="top" secondItem="bVC-zN-EJl" secondAttribute="bottom" id="P31-Uk-egI"/>
                             <constraint firstItem="Ya6-X1-YTu" firstAttribute="trailing" secondItem="g0f-FI-m7h" secondAttribute="trailing" id="f6r-Va-2Mu"/>
-                            <constraint firstItem="g0f-FI-m7h" firstAttribute="top" secondItem="Ya6-X1-YTu" secondAttribute="top" id="rn6-Xp-Dof"/>
+                            <constraint firstItem="bVC-zN-EJl" firstAttribute="top" secondItem="Ya6-X1-YTu" secondAttribute="top" id="l81-hE-6B0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ya6-X1-YTu"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="g0f-FI-m7h" id="CWw-Zs-Lqf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="saU-xv-prr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="584" y="61"/>
+            <point key="canvasLocation" x="582.60869565217399" y="60.9375"/>
         </scene>
     </scenes>
     <resources>
+        <image name="arrow" width="29" height="25"/>
         <image name="check_mark" width="25" height="19"/>
     </resources>
 </document>

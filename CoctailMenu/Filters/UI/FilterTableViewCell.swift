@@ -10,15 +10,13 @@ import UIKit
 
 class FilterTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var filterNameLabel: UILabel!
+    @IBOutlet weak var filterCheckMarkButton: UIButton!
+
+    @IBAction func filterCheckMarkButtonTapped(_ sender: UIButton) {
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func configure(filter: Drink) {
+        filterNameLabel.text = filter.category
     }
-
 }

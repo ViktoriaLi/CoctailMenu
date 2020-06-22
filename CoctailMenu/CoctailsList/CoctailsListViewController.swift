@@ -14,8 +14,10 @@ protocol CoctailsListViewDisplayLogic: class {
     func fillCategories(viewModel: CoctailsListView.GetCategories.ViewModel)
 }
 
-class CoctailsListViewController: UITableViewController {
+class CoctailsListViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     var categories = [Drink]() {
         didSet {
             if categories.count > 0 {
@@ -30,6 +32,8 @@ class CoctailsListViewController: UITableViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
     }
+    
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -48,6 +52,9 @@ class CoctailsListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         let nibCategory = UINib.init(nibName: "CategoryTableViewCell", bundle: nil)
         tableView.register(nibCategory, forCellReuseIdentifier: "filterHeader")
         let nibCoctail = UINib.init(nibName: "CoctailTableViewCell", bundle: nil)
@@ -55,6 +62,14 @@ class CoctailsListViewController: UITableViewController {
         getCategories()
     }
 
+    @IBAction func filterButtonTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Filters", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "filtersVC") as? FiltersViewController {
+            vc.categories = categories
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
     func getCategories() {
         let request = CoctailsListView.GetCategories.Request()
         interactor?.getCategories(request: request)
@@ -67,18 +82,17 @@ class CoctailsListViewController: UITableViewController {
 
 }
 
-
-extension CoctailsListViewController {
+extension CoctailsListViewController: UITableViewDelegate, UITableViewDataSource  {
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return coctails[categories[section].category]?.count ?? 0
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return categories.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell()
         if indexPath.row == 0 {
@@ -105,14 +119,12 @@ extension CoctailsListViewController: CoctailsListViewDisplayLogic {
     
     func fillCoctailsList(viewModel: CoctailsListView.GetCoctails.ViewModel) {
         coctails[viewModel.category] = viewModel.coctails
-        self.tableView.separatorStyle = .singleLine
         tableView.reloadData()
     }
 
     func showErrorView(viewModel: CoctailsListView.GetErrorView.ViewModel) {
         DispatchQueue.main.async {
             self.tableView.backgroundView = SomethingWrong(frame: CGRect(x: self.tableView.frame.minX, y: self.tableView.frame.minY, width: self.tableView.frame.width, height: self.tableView.frame.height))
-            self.tableView.separatorStyle = .none
             self.tableView.reloadData()
         }
     }
