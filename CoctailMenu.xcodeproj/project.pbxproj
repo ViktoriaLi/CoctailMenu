@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C1B304DE24A0B638007783B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B304DD24A0B638007783B0 /* AppDelegate.swift */; };
+		C1B304E024A0B638007783B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B304DF24A0B638007783B0 /* SceneDelegate.swift */; };
+		C1B304E224A0B638007783B0 /* CoctailsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B304E124A0B638007783B0 /* CoctailsListViewController.swift */; };
+		C1B304E524A0B638007783B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B304E324A0B638007783B0 /* Main.storyboard */; };
+		C1B304E724A0B641007783B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1B304E624A0B641007783B0 /* Assets.xcassets */; };
+		C1B304EA24A0B641007783B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B304E824A0B641007783B0 /* LaunchScreen.storyboard */; };
+		C1B304F224A0BB27007783B0 /* Filters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1B304F124A0BB27007783B0 /* Filters.storyboard */; };
+		C1B304F424A0BE10007783B0 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B304F324A0BE10007783B0 /* FilterTableViewCell.swift */; };
+		C1B304F624A0BE2C007783B0 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B304F524A0BE2C007783B0 /* FiltersViewController.swift */; };
+		C1B304FA24A0D678007783B0 /* CoctailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B304F924A0D678007783B0 /* CoctailTableViewCell.swift */; };
+		C1B304FC24A0D6EC007783B0 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B304FB24A0D6EC007783B0 /* CategoryTableViewCell.swift */; };
+		C1B304FE24A0D717007783B0 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1B304FD24A0D717007783B0 /* CategoryTableViewCell.xib */; };
+		C1B3050024A0D7F9007783B0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B304FF24A0D7F8007783B0 /* NetworkManager.swift */; };
+		C1B3050424A0E056007783B0 /* CoctailsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B3050324A0E056007783B0 /* CoctailsListInteractor.swift */; };
+		C1B3050624A0E065007783B0 /* CoctailsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B3050524A0E065007783B0 /* CoctailsListPresenter.swift */; };
+		C1B3050824A0E070007783B0 /* CoctailsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B3050724A0E070007783B0 /* CoctailsListViewModel.swift */; };
+		C1B3050C24A0E27A007783B0 /* SomethingWrong.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1B3050B24A0E27A007783B0 /* SomethingWrong.xib */; };
+		C1B3050E24A0E295007783B0 /* SomethingWrong.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B3050D24A0E295007783B0 /* SomethingWrong.swift */; };
+		C1B3051224A0E377007783B0 /* CoctailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B3051124A0E377007783B0 /* CoctailModel.swift */; };
+		C1B3051524A0E72E007783B0 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B3051424A0E72E007783B0 /* ApiResponse.swift */; };
+		C1B3051724A0EB93007783B0 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B3051624A0EB93007783B0 /* UIImageView.swift */; };
+		C1B3051924A0EC0D007783B0 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B3051824A0EC0D007783B0 /* ImageCacheManager.swift */; };
+		C1B3051B24A0EE7B007783B0 /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B3051A24A0EE7B007783B0 /* FilterModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C1B304DA24A0B638007783B0 /* CoctailMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoctailMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1B304DD24A0B638007783B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C1B304DF24A0B638007783B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C1B304E124A0B638007783B0 /* CoctailsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailsListViewController.swift; sourceTree = "<group>"; };
+		C1B304E424A0B638007783B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C1B304E624A0B641007783B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C1B304E924A0B641007783B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C1B304EB24A0B641007783B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1B304F124A0BB27007783B0 /* Filters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filters.storyboard; sourceTree = "<group>"; };
+		C1B304F324A0BE10007783B0 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
+		C1B304F524A0BE2C007783B0 /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
+		C1B304F924A0D678007783B0 /* CoctailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailTableViewCell.swift; sourceTree = "<group>"; };
+		C1B304FB24A0D6EC007783B0 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		C1B304FD24A0D717007783B0 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		C1B304FF24A0D7F8007783B0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C1B3050324A0E056007783B0 /* CoctailsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailsListInteractor.swift; sourceTree = "<group>"; };
+		C1B3050524A0E065007783B0 /* CoctailsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailsListPresenter.swift; sourceTree = "<group>"; };
+		C1B3050724A0E070007783B0 /* CoctailsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailsListViewModel.swift; sourceTree = "<group>"; };
+		C1B3050B24A0E27A007783B0 /* SomethingWrong.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SomethingWrong.xib; sourceTree = "<group>"; };
+		C1B3050D24A0E295007783B0 /* SomethingWrong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomethingWrong.swift; sourceTree = "<group>"; };
+		C1B3051124A0E377007783B0 /* CoctailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailModel.swift; sourceTree = "<group>"; };
+		C1B3051424A0E72E007783B0 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		C1B3051624A0EB93007783B0 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		C1B3051824A0EC0D007783B0 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
+		C1B3051A24A0EE7B007783B0 /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C1B304D724A0B638007783B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C1B304D124A0B638007783B0 = {
+			isa = PBXGroup;
+			children = (
+				C1B304DC24A0B638007783B0 /* CoctailMenu */,
+				C1B304DB24A0B638007783B0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C1B304DB24A0B638007783B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C1B304DA24A0B638007783B0 /* CoctailMenu.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C1B304DC24A0B638007783B0 /* CoctailMenu */ = {
+			isa = PBXGroup;
+			children = (
+				C1B3051324A0E4E8007783B0 /* Extensions */,
+				C1B3051024A0E368007783B0 /* Model */,
+				C1B3050A24A0E260007783B0 /* GeneralUIElements */,
+				C1B304F724A0D2DE007783B0 /* CoctailsList */,
+				C1B304F824A0D547007783B0 /* Filters */,
+				C1B3050124A0D7FE007783B0 /* Services */,
+				C1B304DF24A0B638007783B0 /* SceneDelegate.swift */,
+				C1B304DD24A0B638007783B0 /* AppDelegate.swift */,
+				C1B304E624A0B641007783B0 /* Assets.xcassets */,
+				C1B304E824A0B641007783B0 /* LaunchScreen.storyboard */,
+				C1B304EB24A0B641007783B0 /* Info.plist */,
+			);
+			path = CoctailMenu;
+			sourceTree = "<group>";
+		};
+		C1B304F724A0D2DE007783B0 /* CoctailsList */ = {
+			isa = PBXGroup;
+			children = (
+				C1B3050324A0E056007783B0 /* CoctailsListInteractor.swift */,
+				C1B3050524A0E065007783B0 /* CoctailsListPresenter.swift */,
+				C1B304E124A0B638007783B0 /* CoctailsListViewController.swift */,
+				C1B3050724A0E070007783B0 /* CoctailsListViewModel.swift */,
+				C1B3050924A0E236007783B0 /* UI */,
+			);
+			path = CoctailsList;
+			sourceTree = "<group>";
+		};
+		C1B304F824A0D547007783B0 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				C1B304F524A0BE2C007783B0 /* FiltersViewController.swift */,
+				C1B3050F24A0E339007783B0 /* UI */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		C1B3050124A0D7FE007783B0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C1B3050224A0D81F007783B0 /* Network */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C1B3050224A0D81F007783B0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C1B304FF24A0D7F8007783B0 /* NetworkManager.swift */,
+				C1B3051824A0EC0D007783B0 /* ImageCacheManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C1B3050924A0E236007783B0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C1B304E324A0B638007783B0 /* Main.storyboard */,
+				C1B304F924A0D678007783B0 /* CoctailTableViewCell.swift */,
+				C1B304FB24A0D6EC007783B0 /* CategoryTableViewCell.swift */,
+				C1B304FD24A0D717007783B0 /* CategoryTableViewCell.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		C1B3050A24A0E260007783B0 /* GeneralUIElements */ = {
+			isa = PBXGroup;
+			children = (
+				C1B3050B24A0E27A007783B0 /* SomethingWrong.xib */,
+				C1B3050D24A0E295007783B0 /* SomethingWrong.swift */,
+			);
+			path = GeneralUIElements;
+			sourceTree = "<group>";
+		};
+		C1B3050F24A0E339007783B0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C1B304F124A0BB27007783B0 /* Filters.storyboard */,
+				C1B304F324A0BE10007783B0 /* FilterTableViewCell.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		C1B3051024A0E368007783B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C1B3051124A0E377007783B0 /* CoctailModel.swift */,
+				C1B3051424A0E72E007783B0 /* ApiResponse.swift */,
+				C1B3051A24A0EE7B007783B0 /* FilterModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C1B3051324A0E4E8007783B0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C1B3051624A0EB93007783B0 /* UIImageView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C1B304D924A0B638007783B0 /* CoctailMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1B304EE24A0B641007783B0 /* Build configuration list for PBXNativeTarget "CoctailMenu" */;
+			buildPhases = (
+				C1B304D624A0B638007783B0 /* Sources */,
+				C1B304D724A0B638007783B0 /* Frameworks */,
+				C1B304D824A0B638007783B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoctailMenu;
+			productName = CoctailMenu;
+			productReference = C1B304DA24A0B638007783B0 /* CoctailMenu.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C1B304D224A0B638007783B0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = Viktoria;
+				TargetAttributes = {
+					C1B304D924A0B638007783B0 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = C1B304D524A0B638007783B0 /* Build configuration list for PBXProject "CoctailMenu" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C1B304D124A0B638007783B0;
+			productRefGroup = C1B304DB24A0B638007783B0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C1B304D924A0B638007783B0 /* CoctailMenu */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C1B304D824A0B638007783B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1B304EA24A0B641007783B0 /* LaunchScreen.storyboard in Resources */,
+				C1B304FE24A0D717007783B0 /* CategoryTableViewCell.xib in Resources */,
+				C1B3050C24A0E27A007783B0 /* SomethingWrong.xib in Resources */,
+				C1B304E724A0B641007783B0 /* Assets.xcassets in Resources */,
+				C1B304F224A0BB27007783B0 /* Filters.storyboard in Resources */,
+				C1B304E524A0B638007783B0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C1B304D624A0B638007783B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1B3050624A0E065007783B0 /* CoctailsListPresenter.swift in Sources */,
+				C1B3051724A0EB93007783B0 /* UIImageView.swift in Sources */,
+				C1B304E224A0B638007783B0 /* CoctailsListViewController.swift in Sources */,
+				C1B304F424A0BE10007783B0 /* FilterTableViewCell.swift in Sources */,
+				C1B3051B24A0EE7B007783B0 /* FilterModel.swift in Sources */,
+				C1B3051924A0EC0D007783B0 /* ImageCacheManager.swift in Sources */,
+				C1B3051524A0E72E007783B0 /* ApiResponse.swift in Sources */,
+				C1B304DE24A0B638007783B0 /* AppDelegate.swift in Sources */,
+				C1B3050424A0E056007783B0 /* CoctailsListInteractor.swift in Sources */,
+				C1B304E024A0B638007783B0 /* SceneDelegate.swift in Sources */,
+				C1B3050E24A0E295007783B0 /* SomethingWrong.swift in Sources */,
+				C1B3050024A0D7F9007783B0 /* NetworkManager.swift in Sources */,
+				C1B304FC24A0D6EC007783B0 /* CategoryTableViewCell.swift in Sources */,
+				C1B304F624A0BE2C007783B0 /* FiltersViewController.swift in Sources */,
+				C1B304FA24A0D678007783B0 /* CoctailTableViewCell.swift in Sources */,
+				C1B3051224A0E377007783B0 /* CoctailModel.swift in Sources */,
+				C1B3050824A0E070007783B0 /* CoctailsListViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C1B304E324A0B638007783B0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C1B304E424A0B638007783B0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C1B304E824A0B641007783B0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C1B304E924A0B641007783B0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C1B304EC24A0B641007783B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C1B304ED24A0B641007783B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C1B304EF24A0B641007783B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3922KQM96;
+				INFOPLIST_FILE = CoctailMenu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Viktoria.CoctailMenu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C1B304F024A0B641007783B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W3922KQM96;
+				INFOPLIST_FILE = CoctailMenu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Viktoria.CoctailMenu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C1B304D524A0B638007783B0 /* Build configuration list for PBXProject "CoctailMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1B304EC24A0B641007783B0 /* Debug */,
+				C1B304ED24A0B641007783B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1B304EE24A0B641007783B0 /* Build configuration list for PBXNativeTarget "CoctailMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1B304EF24A0B641007783B0 /* Debug */,
+				C1B304F024A0B641007783B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C1B304D224A0B638007783B0 /* Project object */;
+}
