@@ -11,7 +11,8 @@ import Foundation
 struct Drink: Decodable {
     
     var category: String
-
+    var isSelected = true
+    
     enum CodingKeys: String, CodingKey {
         case category = "strCategory"
     }

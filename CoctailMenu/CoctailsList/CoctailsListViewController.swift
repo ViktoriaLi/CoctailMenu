@@ -85,40 +85,54 @@ class CoctailsListViewController: UIViewController {
 extension CoctailsListViewController: UITableViewDelegate, UITableViewDataSource  {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return coctails[categories[section].category]?.count ?? 0
+        if let coctails = coctails[categories[section].category]?.count {
+            return coctails + 1
+        }
+        return 0
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        /*if categories.count > 0 {
+            return 1
+        }*/
         return categories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = UITableViewCell()
+        print(indexPath.section, indexPath.row)
         if indexPath.row == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "filterHeader", for: indexPath) as? CategoryTableViewCell {
-                cell.configure(filter: categories[0])
+                cell.configure(filter: categories[indexPath.section])
                 return cell
                 
             }
         } else {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "coctailCell", for: indexPath) as? CoctailTableViewCell {
-                if let coctail = coctails[categories[0].category] {
-                    cell.configure(coctail: coctail[indexPath.row])
+                if let coctail = coctails[categories[indexPath.section].category] {
+                    cell.configure(coctail: coctail[indexPath.row - 1])
                     return cell
                 }
 
             }
         }
-        return cell
+        return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == coctails[categories[indexPath.section].category]!.count - 1 {
+            print("will display last row")
+            if indexPath.section + 1 < categories.count, coctails[categories[indexPath.section + 1].category] == nil {
+                getCoctails(from: categories[indexPath.section + 1].category)
+            }
+        }
+    }
 }
 
 extension CoctailsListViewController: CoctailsListViewDisplayLogic {
     
     func fillCoctailsList(viewModel: CoctailsListView.GetCoctails.ViewModel) {
         coctails[viewModel.category] = viewModel.coctails
+        //tableView.reloadSections([coctails.count], with: .automatic)
         tableView.reloadData()
     }
 

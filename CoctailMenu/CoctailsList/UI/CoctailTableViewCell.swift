@@ -13,6 +13,11 @@ class CoctailTableViewCell: UITableViewCell {
     @IBOutlet weak var coctailImageView: UIImageView!
     @IBOutlet weak var coctailNameLabel: UILabel!
     
+    override func prepareForReuse() {
+        coctailNameLabel.text = ""
+        coctailImageView.image = nil
+    }
+    
     func configure(coctail: Coctail) {
         coctailNameLabel.text = coctail.name
         coctailImageView.loadImage(from: coctail.imageUrl + "/preview")
