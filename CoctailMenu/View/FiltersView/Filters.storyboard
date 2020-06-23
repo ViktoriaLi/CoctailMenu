@@ -93,6 +93,17 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43X-52-Wg6">
+                                <rect key="frame" x="27" y="699" width="360" height="53"/>
+                                <viewLayoutGuide key="safeArea" id="v1g-44-6RX"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                <state key="normal" title="APPLAY" backgroundImage="rectangle">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="applayButtonTapped:" destination="2uu-fO-56s" eventType="touchUpInside" id="R4A-sM-9cU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -103,6 +114,9 @@
                             <constraint firstItem="g0f-FI-m7h" firstAttribute="top" secondItem="bVC-zN-EJl" secondAttribute="bottom" id="P31-Uk-egI"/>
                             <constraint firstItem="Ya6-X1-YTu" firstAttribute="trailing" secondItem="g0f-FI-m7h" secondAttribute="trailing" id="f6r-Va-2Mu"/>
                             <constraint firstItem="bVC-zN-EJl" firstAttribute="top" secondItem="Ya6-X1-YTu" secondAttribute="top" id="l81-hE-6B0"/>
+                            <constraint firstItem="43X-52-Wg6" firstAttribute="trailing" secondItem="Ya6-X1-YTu" secondAttribute="trailing" constant="-27" id="v0Z-Zh-mV2"/>
+                            <constraint firstItem="43X-52-Wg6" firstAttribute="leading" secondItem="Ya6-X1-YTu" secondAttribute="leading" constant="27" id="vaP-jC-F1c"/>
+                            <constraint firstItem="Ya6-X1-YTu" firstAttribute="bottom" secondItem="43X-52-Wg6" secondAttribute="bottom" constant="110" id="ziK-7G-8Ha"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ya6-X1-YTu"/>
                     </view>
@@ -118,5 +132,6 @@
     <resources>
         <image name="arrow" width="29" height="25"/>
         <image name="check_mark" width="25" height="19"/>
+        <image name="rectangle" width="360" height="53"/>
     </resources>
 </document>

@@ -43,6 +43,9 @@
 		C1B3053624A11043007783B0 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C1B3052A24A11042007783B0 /* Roboto-BoldItalic.ttf */; };
 		C1B3053724A11043007783B0 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C1B3052B24A11042007783B0 /* Roboto-Black.ttf */; };
 		C1B3053824A11043007783B0 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C1B3052C24A11042007783B0 /* Roboto-Light.ttf */; };
+		C1B3053A24A21765007783B0 /* FiltersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B3053924A21764007783B0 /* FiltersInteractor.swift */; };
+		C1B3053C24A21780007783B0 /* FiltersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B3053B24A21780007783B0 /* FiltersPresenter.swift */; };
+		C1B3053E24A21791007783B0 /* FiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B3053D24A21791007783B0 /* FiltersViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +87,9 @@
 		C1B3052A24A11042007783B0 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
 		C1B3052B24A11042007783B0 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		C1B3052C24A11042007783B0 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		C1B3053924A21764007783B0 /* FiltersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersInteractor.swift; sourceTree = "<group>"; };
+		C1B3053B24A21780007783B0 /* FiltersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersPresenter.swift; sourceTree = "<group>"; };
+		C1B3053D24A21791007783B0 /* FiltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,7 @@
 		C1B304DC24A0B638007783B0 /* CoctailMenu */ = {
 			isa = PBXGroup;
 			children = (
+				C1B3053F24A217D2007783B0 /* View */,
 				C1B3051E24A10FE2007783B0 /* Resources */,
 				C1B3051324A0E4E8007783B0 /* Extensions */,
 				C1B3051024A0E368007783B0 /* Model */,
@@ -139,7 +146,6 @@
 				C1B3050524A0E065007783B0 /* CoctailsListPresenter.swift */,
 				C1B304E124A0B638007783B0 /* CoctailsListViewController.swift */,
 				C1B3050724A0E070007783B0 /* CoctailsListViewModel.swift */,
-				C1B3050924A0E236007783B0 /* UI */,
 			);
 			path = CoctailsList;
 			sourceTree = "<group>";
@@ -147,8 +153,10 @@
 		C1B304F824A0D547007783B0 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
+				C1B3053924A21764007783B0 /* FiltersInteractor.swift */,
+				C1B3053B24A21780007783B0 /* FiltersPresenter.swift */,
 				C1B304F524A0BE2C007783B0 /* FiltersViewController.swift */,
-				C1B3050F24A0E339007783B0 /* UI */,
+				C1B3053D24A21791007783B0 /* FiltersViewModel.swift */,
 			);
 			path = Filters;
 			sourceTree = "<group>";
@@ -170,7 +178,7 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		C1B3050924A0E236007783B0 /* UI */ = {
+		C1B3050924A0E236007783B0 /* CoctailsView */ = {
 			isa = PBXGroup;
 			children = (
 				C1B304E324A0B638007783B0 /* Main.storyboard */,
@@ -179,7 +187,7 @@
 				C1B304FB24A0D6EC007783B0 /* CategoryTableViewCell.swift */,
 				C1B304FD24A0D717007783B0 /* CategoryTableViewCell.xib */,
 			);
-			path = UI;
+			path = CoctailsView;
 			sourceTree = "<group>";
 		};
 		C1B3050A24A0E260007783B0 /* GeneralUIElements */ = {
@@ -191,13 +199,13 @@
 			path = GeneralUIElements;
 			sourceTree = "<group>";
 		};
-		C1B3050F24A0E339007783B0 /* UI */ = {
+		C1B3050F24A0E339007783B0 /* FiltersView */ = {
 			isa = PBXGroup;
 			children = (
 				C1B304F124A0BB27007783B0 /* Filters.storyboard */,
 				C1B304F324A0BE10007783B0 /* FilterTableViewCell.swift */,
 			);
-			path = UI;
+			path = FiltersView;
 			sourceTree = "<group>";
 		};
 		C1B3051024A0E368007783B0 /* Model */ = {
@@ -251,6 +259,15 @@
 				C1B3052724A11042007783B0 /* Roboto-ThinItalic.ttf */,
 			);
 			path = Roboto;
+			sourceTree = "<group>";
+		};
+		C1B3053F24A217D2007783B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C1B3050F24A0E339007783B0 /* FiltersView */,
+				C1B3050924A0E236007783B0 /* CoctailsView */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,8 +367,11 @@
 				C1B304DE24A0B638007783B0 /* AppDelegate.swift in Sources */,
 				C1B3050424A0E056007783B0 /* CoctailsListInteractor.swift in Sources */,
 				C1B304E024A0B638007783B0 /* SceneDelegate.swift in Sources */,
+				C1B3053A24A21765007783B0 /* FiltersInteractor.swift in Sources */,
+				C1B3053C24A21780007783B0 /* FiltersPresenter.swift in Sources */,
 				C1B3050E24A0E295007783B0 /* SomethingWrong.swift in Sources */,
 				C1B3050024A0D7F9007783B0 /* NetworkManager.swift in Sources */,
+				C1B3053E24A21791007783B0 /* FiltersViewModel.swift in Sources */,
 				C1B304FC24A0D6EC007783B0 /* CategoryTableViewCell.swift in Sources */,
 				C1B304F624A0BE2C007783B0 /* FiltersViewController.swift in Sources */,
 				C1B304FA24A0D678007783B0 /* CoctailTableViewCell.swift in Sources */,

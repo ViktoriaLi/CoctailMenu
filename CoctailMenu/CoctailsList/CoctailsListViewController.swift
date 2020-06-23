@@ -21,7 +21,11 @@ class CoctailsListViewController: UIViewController {
     var categories = [Drink]() {
         didSet {
             if categories.count > 0 {
-                getCoctails(from: categories[0].category)
+                if let index = categories.firstIndex(where: { $0.isSelected == true }) {
+                    getCoctails(from: categories[index].category)
+                } else {
+                    //implement
+                }
             }
         }
     }
@@ -32,8 +36,6 @@ class CoctailsListViewController: UIViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
     }
-    
-    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -65,7 +67,11 @@ class CoctailsListViewController: UIViewController {
     @IBAction func filterButtonTapped(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Filters", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "filtersVC") as? FiltersViewController {
-            vc.categories = categories
+            vc.updateFilters = { filteredCategories in
+                self.coctails.removeAll()
+                self.categories = filteredCategories
+                return
+            }
             self.present(vc, animated: true, completion: nil)
         }
     }
@@ -92,9 +98,6 @@ extension CoctailsListViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        /*if categories.count > 0 {
-            return 1
-        }*/
         return categories.count
     }
     
@@ -122,7 +125,15 @@ extension CoctailsListViewController: UITableViewDelegate, UITableViewDataSource
         if indexPath.row == coctails[categories[indexPath.section].category]!.count - 1 {
             print("will display last row")
             if indexPath.section + 1 < categories.count, coctails[categories[indexPath.section + 1].category] == nil {
-                getCoctails(from: categories[indexPath.section + 1].category)
+                var nextCategory = indexPath.section + 1
+                let startIndex = indexPath.section + 1
+                for i in startIndex..<categories.count {
+                    if categories[i].isSelected == true {
+                        nextCategory = i
+                        break
+                    }
+                }
+                getCoctails(from: categories[nextCategory].category)
             }
         }
     }

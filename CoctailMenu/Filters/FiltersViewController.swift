@@ -8,24 +8,60 @@
 
 import UIKit
 
+protocol FiltersViewDisplayLogic: class {
+    func showErrorView(viewModel: FiltersView.GetErrorView.ViewModel)
+    func fillCategories(viewModel: FiltersView.GetCategories.ViewModel)
+}
+
 class FiltersViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
     var categories = [Drink]()
+    //var filterContainer: FilterList?
+    var updateFilters: (([Drink]) -> ())? = nil
     
+    var interactor: FiltersBusinessLogic?
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    private func setup() {
+        let viewController = self
+        let interactor = FiltersViewInteractor()
+        let presenter = FiltersViewPresenter()
+        viewController.interactor = interactor
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
+        getCategories()
+    }
+    
+    func getCategories() {
+        let request = FiltersView.GetCategories.Request()
+        interactor?.getCategories(request: request)
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
-        self.dismiss(animated: true) {
-            
-        }
+        self.dismiss(animated: true)
+    }
+    
+    @IBAction func applayButtonTapped(_ sender: UIButton) {
+        let filtereCategories = categories.filter {$0.isSelected == true}
+        updateFilters?(filtereCategories)
+        self.dismiss(animated: true)
     }
 }
 
@@ -38,9 +74,32 @@ extension FiltersViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "filterCell") as? FilterTableViewCell else {
             return UITableViewCell()
         }
-        cell.configure(filter: categories[indexPath.row])
+        cell.delegate = self
+        cell.configure(filter: categories[indexPath.row], cellIndex: indexPath)
         return cell
     }
     
     
+}
+
+extension FiltersViewController: CheckMarkStatus {
+    func changeCheckMarkVisibility(cellIndex: IndexPath, visibility: Bool) {
+        categories[cellIndex.row].isSelected = visibility
+    }
+}
+
+extension FiltersViewController: FiltersViewDisplayLogic {
+    
+    func showErrorView(viewModel: FiltersView.GetErrorView.ViewModel) {
+        DispatchQueue.main.async {
+            self.tableView.backgroundView = SomethingWrong(frame: CGRect(x: self.tableView.frame.minX, y: self.tableView.frame.minY, width: self.tableView.frame.width, height: self.tableView.frame.height))
+            self.tableView.reloadData()
+        }
+    }
+    
+    func fillCategories(viewModel: FiltersView.GetCategories.ViewModel) {
+        categories = viewModel.categories
+        tableView.reloadData()
+    }
+
 }
