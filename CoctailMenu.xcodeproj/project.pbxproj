@@ -46,6 +46,9 @@
 		C1B3053A24A21765007783B0 /* FiltersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B3053924A21764007783B0 /* FiltersInteractor.swift */; };
 		C1B3053C24A21780007783B0 /* FiltersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B3053B24A21780007783B0 /* FiltersPresenter.swift */; };
 		C1B3053E24A21791007783B0 /* FiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B3053D24A21791007783B0 /* FiltersViewModel.swift */; };
+		C1B3054224A22204007783B0 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B3054124A22204007783B0 /* NavigationView.swift */; };
+		C1B3054424A22216007783B0 /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1B3054324A22216007783B0 /* NavigationView.xib */; };
+		C1B3054624A22C46007783B0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B3054524A22C45007783B0 /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +93,9 @@
 		C1B3053924A21764007783B0 /* FiltersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersInteractor.swift; sourceTree = "<group>"; };
 		C1B3053B24A21780007783B0 /* FiltersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersPresenter.swift; sourceTree = "<group>"; };
 		C1B3053D24A21791007783B0 /* FiltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewModel.swift; sourceTree = "<group>"; };
+		C1B3054124A22204007783B0 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		C1B3054324A22216007783B0 /* NavigationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
+		C1B3054524A22C45007783B0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				C1B3051624A0EB93007783B0 /* UIImageView.swift */,
+				C1B3054524A22C45007783B0 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -264,10 +271,20 @@
 		C1B3053F24A217D2007783B0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C1B3054024A221C1007783B0 /* NavigationView */,
 				C1B3050F24A0E339007783B0 /* FiltersView */,
 				C1B3050924A0E236007783B0 /* CoctailsView */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C1B3054024A221C1007783B0 /* NavigationView */ = {
+			isa = PBXGroup;
+			children = (
+				C1B3054124A22204007783B0 /* NavigationView.swift */,
+				C1B3054324A22216007783B0 /* NavigationView.xib */,
+			);
+			path = NavigationView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +351,7 @@
 				C1B3053524A11043007783B0 /* Roboto-LightItalic.ttf in Resources */,
 				C1B3053024A11043007783B0 /* Roboto-Regular.ttf in Resources */,
 				C1B3053724A11043007783B0 /* Roboto-Black.ttf in Resources */,
+				C1B3054424A22216007783B0 /* NavigationView.xib in Resources */,
 				C1B3053124A11043007783B0 /* Roboto-Bold.ttf in Resources */,
 				C1B304EA24A0B641007783B0 /* LaunchScreen.storyboard in Resources */,
 				C1B304FE24A0D717007783B0 /* CategoryTableViewCell.xib in Resources */,
@@ -359,11 +377,13 @@
 			files = (
 				C1B3050624A0E065007783B0 /* CoctailsListPresenter.swift in Sources */,
 				C1B3051724A0EB93007783B0 /* UIImageView.swift in Sources */,
+				C1B3054624A22C46007783B0 /* UIView.swift in Sources */,
 				C1B304E224A0B638007783B0 /* CoctailsListViewController.swift in Sources */,
 				C1B304F424A0BE10007783B0 /* FilterTableViewCell.swift in Sources */,
 				C1B3051B24A0EE7B007783B0 /* FilterModel.swift in Sources */,
 				C1B3051924A0EC0D007783B0 /* ImageCacheManager.swift in Sources */,
 				C1B3051524A0E72E007783B0 /* ApiResponse.swift in Sources */,
+				C1B3054224A22204007783B0 /* NavigationView.swift in Sources */,
 				C1B304DE24A0B638007783B0 /* AppDelegate.swift in Sources */,
 				C1B3050424A0E056007783B0 /* CoctailsListInteractor.swift in Sources */,
 				C1B304E024A0B638007783B0 /* SceneDelegate.swift in Sources */,

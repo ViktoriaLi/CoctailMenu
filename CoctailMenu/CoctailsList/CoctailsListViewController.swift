@@ -17,6 +17,7 @@ protocol CoctailsListViewDisplayLogic: class {
 class CoctailsListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var navigationView: UIView!
     
     var categories = [Drink]() {
         didSet {
@@ -56,6 +57,7 @@ class CoctailsListViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        navigationView.addGrayShadow()
         
         let nibCategory = UINib.init(nibName: "CategoryTableViewCell", bundle: nil)
         tableView.register(nibCategory, forCellReuseIdentifier: "filterHeader")
@@ -65,6 +67,7 @@ class CoctailsListViewController: UIViewController {
     }
 
     @IBAction func filterButtonTapped(_ sender: UIButton) {
+        
         let storyboard = UIStoryboard(name: "Filters", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "filtersVC") as? FiltersViewController {
             vc.updateFilters = { filteredCategories in
@@ -72,7 +75,7 @@ class CoctailsListViewController: UIViewController {
                 self.categories = filteredCategories
                 return
             }
-            self.present(vc, animated: true, completion: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

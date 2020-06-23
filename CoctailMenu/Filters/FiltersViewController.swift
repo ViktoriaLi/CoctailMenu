@@ -15,10 +15,11 @@ protocol FiltersViewDisplayLogic: class {
 
 class FiltersViewController: UIViewController {
 
+    @IBOutlet weak var applayButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var navigationView: UIView!
     
     var categories = [Drink]()
-    //var filterContainer: FilterList?
     var updateFilters: (([Drink]) -> ())? = nil
     
     var interactor: FiltersBusinessLogic?
@@ -46,6 +47,9 @@ class FiltersViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        navigationView.addGrayShadow()
+        
+        applayButton.titleLabel?.font = UIFont (name: "Roboto-Bold", size: 16)
         getCategories()
     }
     
@@ -55,13 +59,13 @@ class FiltersViewController: UIViewController {
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
-        self.dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func applayButtonTapped(_ sender: UIButton) {
         let filtereCategories = categories.filter {$0.isSelected == true}
         updateFilters?(filtereCategories)
-        self.dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
