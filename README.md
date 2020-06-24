@@ -14,4 +14,4 @@ Image caching
 
 # Screens
 
-<a href="https://ibb.co/YWZshQH"><img src="https://i.ibb.co/fSvwHFj/Be-Funky-collage.png" alt="Be-Funky-collage" border="0"></a>
+<a href="https://ibb.co/tYpHCt8"><img src="https://i.ibb.co/dk4fKqG/Be-Funky-collage-1.png" alt="Be-Funky-collage-1" border="0"></a>
