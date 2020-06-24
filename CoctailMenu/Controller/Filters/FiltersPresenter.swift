@@ -11,7 +11,6 @@ import Foundation
 protocol FiltersViewPresentationLogic: class {
     func processingError(response:FiltersView.GetErrorView.Response)
     func processingCategories(response: FiltersView.GetCategories.Response)
-
 }
 
 class FiltersViewPresenter: FiltersViewPresentationLogic {
@@ -29,10 +28,8 @@ class FiltersViewPresenter: FiltersViewPresentationLogic {
     }
     
     func processingCategories(response: FiltersView.GetCategories.Response) {
-
         let viewModel = FiltersView.GetCategories.ViewModel(categories: response.categories)
         viewController?.fillCategories(viewModel: viewModel)
     }
-    
 }
 

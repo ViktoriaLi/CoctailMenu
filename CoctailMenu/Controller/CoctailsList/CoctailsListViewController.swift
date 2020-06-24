@@ -65,7 +65,7 @@ class CoctailsListViewController: UIViewController {
         tableView.register(nibCategory, forCellReuseIdentifier: "filterHeader")
         let nibCoctail = UINib.init(nibName: "CoctailTableViewCell", bundle: nil)
         tableView.register(nibCoctail, forCellReuseIdentifier: "coctailCell")
-        //tableView.tableFooterView?.isHidden = true
+        
         getCategories()
     }
 
@@ -120,7 +120,6 @@ extension CoctailsListViewController: UITableViewDelegate, UITableViewDataSource
                     cell.configure(coctail: coctail[indexPath.row - 1])
                     return cell
                 }
-
             }
         }
         return UITableViewCell()
@@ -146,22 +145,6 @@ extension CoctailsListViewController: UITableViewDelegate, UITableViewDataSource
             }
         }
     }
-    
-    /*func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        if section == categories.count - 1, let coctails = coctails[categories[section].category]?.count, tableView.visibleCells.count == coctails
- {
-            let view = TableViewFooter(delegate: self, frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 50))
-            return view
-        }
-        return nil
-    }
-
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if section == categories.count - 1, let coctails = coctails[categories[section].category]?.count, tableView.visibleCells.count == coctails - 1 {
-            return 50
-        }
-        return 0
-    }*/
 }
 
 extension CoctailsListViewController: CoctailsListViewDisplayLogic {
@@ -181,7 +164,6 @@ extension CoctailsListViewController: CoctailsListViewDisplayLogic {
     func fillCategories(viewModel: CoctailsListView.GetCategories.ViewModel) {
         self.categories = viewModel.categories
     }
-
 }
 
 extension CoctailsListViewController: ErrorViewDelegate {

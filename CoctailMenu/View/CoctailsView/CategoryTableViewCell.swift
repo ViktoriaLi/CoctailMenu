@@ -10,11 +10,9 @@ import UIKit
 
 class CategoryTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var categoryNameLabel: UILabel!
     
     func configure(filter: Drink) {
         categoryNameLabel.text = filter.category
     }
-
 }

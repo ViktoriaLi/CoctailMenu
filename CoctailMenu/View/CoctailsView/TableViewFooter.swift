@@ -40,5 +40,4 @@ class TableViewFooter: UIView {
     @IBAction func returnToTopButtonTapped(_ sender: UIButton) {
         delegate?.returnToTop()
     }
-
 }

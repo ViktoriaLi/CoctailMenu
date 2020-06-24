@@ -12,7 +12,6 @@ protocol CoctailsListViewPresentationLogic: class {
     func processingError(response: CoctailsListView.GetErrorView.Response)
     func processingCoctails(response: CoctailsListView.GetCoctails.Response)
     func processingCategories(response: CoctailsListView.GetCategories.Response)
-
 }
 
 class CoctailsListViewPresenter: CoctailsListViewPresentationLogic {
@@ -35,7 +34,6 @@ class CoctailsListViewPresenter: CoctailsListViewPresentationLogic {
     }
     
     func processingCategories(response: CoctailsListView.GetCategories.Response) {
-
         let viewModel = CoctailsListView.GetCategories.ViewModel(categories: response.categories)
         viewController?.fillCategories(viewModel: viewModel)
     }

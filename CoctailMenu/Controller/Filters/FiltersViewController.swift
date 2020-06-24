@@ -15,7 +15,7 @@ protocol FiltersViewDisplayLogic: class {
 
 class FiltersViewController: UIViewController {
 
-    @IBOutlet weak var applayButton: UIButton!
+    @IBOutlet weak var applyButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navigationView: UIView!
     
@@ -49,7 +49,6 @@ class FiltersViewController: UIViewController {
         tableView.dataSource = self
         navigationView.addGrayShadow()
         
-        applayButton.titleLabel?.font = UIFont (name: "Roboto-Bold", size: 16)
         getCategories()
     }
     
@@ -62,7 +61,7 @@ class FiltersViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func applayButtonTapped(_ sender: UIButton) {
+    @IBAction func applyButtonTapped(_ sender: UIButton) {
         let filtereCategories = categories.filter {$0.isSelected == true}
         updateFilters?(filtereCategories)
         self.navigationController?.popViewController(animated: true)
@@ -82,8 +81,6 @@ extension FiltersViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configure(filter: categories[indexPath.row], cellIndex: indexPath)
         return cell
     }
-    
-    
 }
 
 extension FiltersViewController: CheckMarkStatus {
@@ -97,17 +94,16 @@ extension FiltersViewController: FiltersViewDisplayLogic {
     func showErrorView(viewModel: FiltersView.GetErrorView.ViewModel) {
         DispatchQueue.main.async {
             self.tableView.backgroundView = SomethingWrong(delegate: self, frame: CGRect(x: self.tableView.frame.minX, y: self.tableView.frame.minY, width: self.tableView.frame.width, height: self.tableView.frame.height))
-            self.applayButton.isHidden = true
+            self.applyButton.isHidden = true
             self.tableView.reloadData()
         }
     }
     
     func fillCategories(viewModel: FiltersView.GetCategories.ViewModel) {
         categories = viewModel.categories
-        applayButton.isHidden = false
+        applyButton.isHidden = false
         tableView.reloadData()
     }
-
 }
 
 extension FiltersViewController: ErrorViewDelegate {

@@ -22,8 +22,6 @@ struct FilterModel: Decodable {
     
     var drinks: [Drink]
 
-    
-    
     enum CodingKeys: String, CodingKey {
         case drinks = "drinks"
     }

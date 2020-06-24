@@ -42,5 +42,4 @@ class SomethingWrong: UIView {
     @IBAction func tryAgainButtonTapped(_ sender: UIButton) {
         delegate?.tryAgain()
     }
-
 }
