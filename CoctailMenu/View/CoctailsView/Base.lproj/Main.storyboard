@@ -48,6 +48,7 @@
                                     <constraint firstAttribute="bottom" secondItem="xMD-eM-9jw" secondAttribute="bottom" constant="21" id="IAs-D1-cDa"/>
                                     <constraint firstItem="xMD-eM-9jw" firstAttribute="top" secondItem="CaG-dF-hgA" secondAttribute="top" constant="21" id="JDN-yz-tux"/>
                                     <constraint firstAttribute="trailing" secondItem="1VR-z8-r5e" secondAttribute="trailing" constant="20.719999999999999" id="ern-hP-6zG"/>
+                                    <constraint firstItem="1VR-z8-r5e" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xMD-eM-9jw" secondAttribute="trailing" constant="20" id="prr-EU-Bf5"/>
                                     <constraint firstAttribute="bottom" secondItem="1VR-z8-r5e" secondAttribute="bottom" constant="21" id="wpT-eV-CiB"/>
                                     <constraint firstItem="xMD-eM-9jw" firstAttribute="leading" secondItem="CaG-dF-hgA" secondAttribute="leading" constant="30" id="x4E-gm-mwv"/>
                                 </constraints>

@@ -22,8 +22,6 @@ enum Endpoint {
     }
 }
 
-var imageCache = NSCache<NSString, UIImage>()
-
 class NetworkManager {
     
     private let urlBase = "https://www.thecocktaildb.com/api/json/v1/1/"

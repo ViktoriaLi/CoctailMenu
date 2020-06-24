@@ -25,11 +25,13 @@ class CoctailsListViewController: UIViewController {
                 if let index = categories.firstIndex(where: { $0.isSelected == true }) {
                     getCoctails(from: categories[index].category)
                 } else {
-                    //implement
+                    coctails.removeAll()
+                    tableView.reloadData()
                 }
             }
         }
     }
+    
     var coctails = [String: [Coctail]]()
     var interactor: CoctailsListBusinessLogic?
     
@@ -63,6 +65,7 @@ class CoctailsListViewController: UIViewController {
         tableView.register(nibCategory, forCellReuseIdentifier: "filterHeader")
         let nibCoctail = UINib.init(nibName: "CoctailTableViewCell", bundle: nil)
         tableView.register(nibCoctail, forCellReuseIdentifier: "coctailCell")
+        //tableView.tableFooterView?.isHidden = true
         getCategories()
     }
 
@@ -88,7 +91,6 @@ class CoctailsListViewController: UIViewController {
         let request = CoctailsListView.GetCoctails.Request(category: category)
         interactor?.getCoctailsByCategory(request: request)
     }
-
 }
 
 extension CoctailsListViewController: UITableViewDelegate, UITableViewDataSource  {
@@ -107,14 +109,14 @@ extension CoctailsListViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print(indexPath.section, indexPath.row)
         if indexPath.row == 0 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "filterHeader", for: indexPath) as? CategoryTableViewCell {
+            if indexPath.section < categories.count, let cell = tableView.dequeueReusableCell(withIdentifier: "filterHeader", for: indexPath) as? CategoryTableViewCell {
                 cell.configure(filter: categories[indexPath.section])
                 return cell
                 
             }
         } else {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "coctailCell", for: indexPath) as? CoctailTableViewCell {
-                if let coctail = coctails[categories[indexPath.section].category] {
+                if indexPath.section < categories.count, let coctail = coctails[categories[indexPath.section].category] {
                     cell.configure(coctail: coctail[indexPath.row - 1])
                     return cell
                 }
@@ -125,7 +127,7 @@ extension CoctailsListViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == coctails[categories[indexPath.section].category]!.count - 1 {
+        if indexPath.section < categories.count, let categoryCoctails = coctails[categories[indexPath.section].category], indexPath.row == categoryCoctails.count - 1 {
             print("will display last row")
             if indexPath.section + 1 < categories.count, coctails[categories[indexPath.section + 1].category] == nil {
                 var nextCategory = indexPath.section + 1
@@ -138,21 +140,40 @@ extension CoctailsListViewController: UITableViewDelegate, UITableViewDataSource
                 }
                 getCoctails(from: categories[nextCategory].category)
             }
+            if indexPath.section == categories.count - 1, let categoryCoctails = coctails[categories[indexPath.section].category], indexPath.row == categoryCoctails.count - 1   {
+                let view = TableViewFooter(delegate: self, frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 50))
+                tableView.tableFooterView = view
+            }
         }
     }
+    
+    /*func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if section == categories.count - 1, let coctails = coctails[categories[section].category]?.count, tableView.visibleCells.count == coctails
+ {
+            let view = TableViewFooter(delegate: self, frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 50))
+            return view
+        }
+        return nil
+    }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == categories.count - 1, let coctails = coctails[categories[section].category]?.count, tableView.visibleCells.count == coctails - 1 {
+            return 50
+        }
+        return 0
+    }*/
 }
 
 extension CoctailsListViewController: CoctailsListViewDisplayLogic {
     
     func fillCoctailsList(viewModel: CoctailsListView.GetCoctails.ViewModel) {
         coctails[viewModel.category] = viewModel.coctails
-        //tableView.reloadSections([coctails.count], with: .automatic)
         tableView.reloadData()
     }
 
     func showErrorView(viewModel: CoctailsListView.GetErrorView.ViewModel) {
-        DispatchQueue.main.async {
-            self.tableView.backgroundView = SomethingWrong(frame: CGRect(x: self.tableView.frame.minX, y: self.tableView.frame.minY, width: self.tableView.frame.width, height: self.tableView.frame.height))
+       DispatchQueue.main.async {
+            self.tableView.backgroundView = SomethingWrong(delegate: self, frame: CGRect(x: self.tableView.frame.minX, y: self.tableView.frame.minY, width: self.tableView.frame.width, height: self.tableView.frame.height))
             self.tableView.reloadData()
         }
     }
@@ -161,4 +182,19 @@ extension CoctailsListViewController: CoctailsListViewDisplayLogic {
         self.categories = viewModel.categories
     }
 
+}
+
+extension CoctailsListViewController: ErrorViewDelegate {
+    
+    func tryAgain() {
+        getCategories()
+    }
+}
+
+extension CoctailsListViewController: ScrollToTopDelegate {
+    
+    func returnToTop() {
+        let indexPath = IndexPath(row: 0, section: 0)
+        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
 }

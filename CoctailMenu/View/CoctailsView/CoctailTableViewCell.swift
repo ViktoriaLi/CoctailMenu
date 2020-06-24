@@ -20,7 +20,12 @@ class CoctailTableViewCell: UITableViewCell {
     
     func configure(coctail: Coctail) {
         coctailNameLabel.text = coctail.name
-        coctailImageView.loadImage(from: coctail.imageUrl + "/preview")
+        coctailImageView.image = nil
+        ImageCaheManager.loadImage(from: coctail.imageUrl + "/preview") { image in
+            DispatchQueue.main.async {
+                self.coctailImageView.image = image
+            }
+        }
     }
 
 }

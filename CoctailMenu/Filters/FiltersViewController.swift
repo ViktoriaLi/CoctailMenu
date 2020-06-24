@@ -96,14 +96,23 @@ extension FiltersViewController: FiltersViewDisplayLogic {
     
     func showErrorView(viewModel: FiltersView.GetErrorView.ViewModel) {
         DispatchQueue.main.async {
-            self.tableView.backgroundView = SomethingWrong(frame: CGRect(x: self.tableView.frame.minX, y: self.tableView.frame.minY, width: self.tableView.frame.width, height: self.tableView.frame.height))
+            self.tableView.backgroundView = SomethingWrong(delegate: self, frame: CGRect(x: self.tableView.frame.minX, y: self.tableView.frame.minY, width: self.tableView.frame.width, height: self.tableView.frame.height))
+            self.applayButton.isHidden = true
             self.tableView.reloadData()
         }
     }
     
     func fillCategories(viewModel: FiltersView.GetCategories.ViewModel) {
         categories = viewModel.categories
+        applayButton.isHidden = false
         tableView.reloadData()
     }
 
+}
+
+extension FiltersViewController: ErrorViewDelegate {
+    
+    func tryAgain() {
+        getCategories()
+    }
 }

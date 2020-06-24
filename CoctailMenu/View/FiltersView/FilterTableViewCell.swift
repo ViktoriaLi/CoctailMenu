@@ -34,5 +34,10 @@ class FilterTableViewCell: UITableViewCell {
     func configure(filter: Drink, cellIndex: IndexPath) {
         selfIndex = cellIndex
         filterNameLabel.text = filter.category
+        if filter.isSelected {
+            filterCheckMarkButton.isHidden = false
+        } else {
+            filterCheckMarkButton.isHidden = true
+        }
     }
 }

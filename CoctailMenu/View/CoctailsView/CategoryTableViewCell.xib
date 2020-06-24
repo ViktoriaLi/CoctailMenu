@@ -20,7 +20,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIQ-Mu-XkA">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIQ-Mu-XkA">
                         <rect key="frame" x="20" y="20" width="374" height="38"/>
                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                         <color key="textColor" red="0.4941176471" green="0.4941176471" blue="0.4941176471" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>

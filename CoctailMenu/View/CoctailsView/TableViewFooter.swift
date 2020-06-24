@@ -1,5 +1,5 @@
 //
-//  NavigationView.swift
+//  TableViewFooter.swift
 //  CoctailMenu
 //
 //  Created by Mac Developer on 23.06.2020.
@@ -8,13 +8,20 @@
 
 import UIKit
 
-class NavigationView: UIView {
+class TableViewFooter: UIView {
 
     @IBOutlet var contentView: UIView!
     
-    @IBOutlet weak var navigationView: UIView!
+    weak var delegate: ScrollToTopDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        loadFromNib()
+    }
+
+    required init(delegate: ScrollToTopDelegate, frame: CGRect) {
+        super.init(frame: frame)
+        self.delegate = delegate
         loadFromNib()
     }
     
@@ -24,15 +31,14 @@ class NavigationView: UIView {
     }
 
     private func loadFromNib() {
-        Bundle.main.loadNibNamed("NavigationView", owner: self, options: nil)
-        
-        
+        Bundle.main.loadNibNamed("TableViewFooter", owner: self, options: nil)
         addSubview(contentView)
-        
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        navigationView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        navigationView.layer.shadowOffset = .init(width: 0, height: 4)
-        navigationView.layer.shadowRadius = 4
     }
+    
+    @IBAction func returnToTopButtonTapped(_ sender: UIButton) {
+        delegate?.returnToTop()
+    }
+
 }
