@@ -8,7 +8,8 @@ For architecture, I used VIP-cycle from CleanSwift architecture.
 
 Also, I implemented small improvements such as:
 
-Empty state in case error during API request 
+Empty state in case error during API request
+
 Image caching
 
 # Screens
