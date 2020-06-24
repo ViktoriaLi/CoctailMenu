@@ -12,6 +12,8 @@ Empty state in case error during API request
 
 Image caching
 
+Possibility to scroll filters tableview above button
+
 # Screens
 
 <a href="https://ibb.co/tYpHCt8"><img src="https://i.ibb.co/dk4fKqG/Be-Funky-collage-1.png" alt="Be-Funky-collage-1" border="0"></a>
