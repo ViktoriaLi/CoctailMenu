@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A689CCB9-718A-4D19-A319-4F4113D8AA22"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoctailMenu/CoctailsList/CoctailsListInteractor.swift"
@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "660FD505-00C5-4267-871C-EE4920AFBF5B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoctailMenu/CoctailsList/CoctailsListInteractor.swift"
@@ -40,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "CC7CD47E-F7EA-470C-8812-D3F5DEA63CCF"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoctailMenu/Services/Network/NetworkManager.swift"
@@ -50,13 +50,45 @@
             endingLineNumber = "43"
             landmarkName = "getData(target:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CC7CD47E-F7EA-470C-8812-D3F5DEA63CCF - 23075dd50ac79618"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoctailMenu.NetworkManager.getData&lt;A where A: Swift.Decodable&gt;(target: CoctailMenu.Endpoint, completion: (Swift.Result&lt;A, CoctailMenu.ApiResponse&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "CoctailMenu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macdeveloper/Documents/Vika/swift_learning/CoctailMenu/CoctailMenu/Services/Network/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "545">
+               </Location>
+               <Location
+                  uuid = "CC7CD47E-F7EA-470C-8812-D3F5DEA63CCF - ae2abfd5fcd0b818"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CoctailMenu.NetworkManager.getData&lt;A where A: Swift.Decodable&gt;(target: CoctailMenu.Endpoint, completion: (Swift.Result&lt;A, CoctailMenu.ApiResponse&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "CoctailMenu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macdeveloper/Documents/Vika/swift_learning/CoctailMenu/CoctailMenu/Services/Network/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "461">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "CA60245D-C9FF-41B3-B13A-F7A7CD2AD3C9"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoctailMenu/Services/Network/NetworkManager.swift"
@@ -72,7 +104,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "DF2B54A6-7F43-4C79-A833-DCF7B8B2A168"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoctailMenu/Services/Network/NetworkManager.swift"
@@ -120,7 +152,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "00BE3592-61D4-4AC8-951C-CC485350E686"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoctailMenu/CoctailsList/CoctailsListViewController.swift"
@@ -136,7 +168,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "20E9F631-25A5-48B7-9D18-662C0DA381AF"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoctailMenu/CoctailsList/CoctailsListViewController.swift"
@@ -161,6 +193,70 @@
             startingLineNumber = "30"
             endingLineNumber = "30"
             landmarkName = "filterCheckMarkButtonTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "75F70188-DA71-4868-9D75-CE1518B3B14E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoctailMenu/Controller/CoctailsList/CoctailsListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "categories"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5382927E-633E-4A81-8637-3F7CCD8EA172"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoctailMenu/Controller/CoctailsList/CoctailsListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "filterButtonTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1CE97117-DD10-4DDA-B23F-EC36B516CECB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoctailMenu/Controller/CoctailsList/CoctailsListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "filterButtonTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "18D069B5-AD03-470C-888E-73484A3E30F4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoctailMenu/Controller/CoctailsList/CoctailsListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "filterButtonTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

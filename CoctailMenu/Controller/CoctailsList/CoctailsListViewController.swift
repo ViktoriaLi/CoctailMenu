@@ -24,9 +24,6 @@ class CoctailsListViewController: UIViewController {
             if categories.count > 0 {
                 if let index = categories.firstIndex(where: { $0.isSelected == true }) {
                     getCoctails(from: categories[index].category)
-                } else {
-                    coctails.removeAll()
-                    tableView.reloadData()
                 }
             }
         }
@@ -76,6 +73,9 @@ class CoctailsListViewController: UIViewController {
             vc.updateFilters = { filteredCategories in
                 self.coctails.removeAll()
                 self.categories = filteredCategories
+                if self.categories.count == 0 {
+                    self.tableView.reloadData()
+                }
                 return
             }
             self.navigationController?.pushViewController(vc, animated: true)
