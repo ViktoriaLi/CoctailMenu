@@ -26,7 +26,6 @@ class CoctailsListViewInteractor: CoctailsListBusinessLogic {
                 self.presenter?.processingError(response: response)
             case .success(let coctails):
                 let response = CoctailsListView.GetCoctails.Response(category: request.category, coctails: coctails.drinks)
-                print(coctails) 
                 self.presenter?.processingCoctails(response: response)
             }
         })
@@ -40,7 +39,6 @@ class CoctailsListViewInteractor: CoctailsListBusinessLogic {
                 self.presenter?.processingError(response: response)
             case .success(let categories):
                 let response = CoctailsListView.GetCategories.Response(categories: categories.drinks)
-                print(categories)
                 self.presenter?.processingCategories(response: response)
             }
         })

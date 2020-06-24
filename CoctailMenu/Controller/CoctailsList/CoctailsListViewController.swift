@@ -82,12 +82,12 @@ class CoctailsListViewController: UIViewController {
         }
     }
     
-    func getCategories() {
+    private func getCategories() {
         let request = CoctailsListView.GetCategories.Request()
         interactor?.getCategories(request: request)
     }
     
-    func getCoctails(from category: String) {
+    private func getCoctails(from category: String) {
         let request = CoctailsListView.GetCoctails.Request(category: category)
         interactor?.getCoctailsByCategory(request: request)
     }
@@ -107,7 +107,6 @@ extension CoctailsListViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(indexPath.section, indexPath.row)
         if indexPath.row == 0 {
             if indexPath.section < categories.count, let cell = tableView.dequeueReusableCell(withIdentifier: "filterHeader", for: indexPath) as? CategoryTableViewCell {
                 cell.configure(filter: categories[indexPath.section])
@@ -127,7 +126,6 @@ extension CoctailsListViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.section < categories.count, let categoryCoctails = coctails[categories[indexPath.section].category], indexPath.row == categoryCoctails.count - 1 {
-            print("will display last row")
             if indexPath.section + 1 < categories.count, coctails[categories[indexPath.section + 1].category] == nil {
                 var nextCategory = indexPath.section + 1
                 let startIndex = indexPath.section + 1

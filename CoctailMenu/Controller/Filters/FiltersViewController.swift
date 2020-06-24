@@ -48,11 +48,18 @@ class FiltersViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         navigationView.addGrayShadow()
-        
+        addFooterToTableView()
         getCategories()
     }
     
-    func getCategories() {
+    private func addFooterToTableView() {
+        let height = view.frame.size.height - (applyButton.frame.size.height + applyButton.frame.origin.y) + 20
+        
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: height))
+        tableView.tableFooterView = view
+    }
+    
+    private func getCategories() {
         let request = FiltersView.GetCategories.Request()
         interactor?.getCategories(request: request)
     }

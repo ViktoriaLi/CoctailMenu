@@ -27,7 +27,6 @@ class NetworkManager {
     private let urlBase = "https://www.thecocktaildb.com/api/json/v1/1/"
     
     private func createRequest(endpoint: String) -> URLRequest? {
-        print(endpoint)
         if let url = URL(string: endpoint) {
             var request = URLRequest(url : url)
             request.httpMethod = "GET"
@@ -42,7 +41,6 @@ class NetworkManager {
         guard let request = createRequest(endpoint: url) else {
             return
         }
-        
         let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
             guard let data = data else {
                 completion(.failure(.failed))
@@ -51,7 +49,6 @@ class NetworkManager {
             do {
                 let res = try JSONDecoder().decode(T.self, from: data)
                 DispatchQueue.main.async {
-                    print(res)
                     completion(.success(res))
                 }
             }

@@ -25,7 +25,6 @@ class FiltersViewInteractor: FiltersBusinessLogic {
                 self.presenter?.processingError(response: response)
             case .success(let categories):
                 let response = FiltersView.GetCategories.Response(categories: categories.drinks)
-                print(categories)
                 self.presenter?.processingCategories(response: response)
             }
         })
